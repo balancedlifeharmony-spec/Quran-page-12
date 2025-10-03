@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سورة البقرة - آيات ٧٧-٨٣ | Surah Al-Baqarah - Verses 77-83</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            padding-top: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .audio-player-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .audio-player-section h3 {
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .audio-player-section p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .audio-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 25px;
+            outline: none;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+        }
+
+        .reciter-info {
+            font-family: 'Amiri', serif;
+            color: #8b4513;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .verse-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .verse-btn {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .verse-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .verse-btn.active {
+            background: linear-gradient(45deg, #a0522d, #8b4513);
+            box-shadow: 0 0 15px rgba(139, 69, 19, 0.5);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .arabic-title {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 10px;
+            direction: rtl;
+        }
+
+        .page-info {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .verses-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .verse {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: linear-gradient(to right, #f8f9fa, #ffffff);
+            border-left: 5px solid #8b4513;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .verse:hover {
+            transform: translateX(5px);
+        }
+
+        .verse-number {
+            display: inline-block;
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .arabic-text {
+            font-family: 'Amiri Quran', 'Amiri', serif;
+            font-size: 2rem;
+            line-height: 2.8;
+            text-align: right;
+            direction: rtl;
+            color: #1a472a;
+            margin: 20px 0;
+            padding: 25px;
+            background: #f8fdf9;
+            border-radius: 8px;
+            border: 2px solid #8b4513;
+        }
+
+        .english-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .reflection-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .reflection-section h2 {
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .reflection-point {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(to right, #fff, #f8f9fa);
+            border-left: 4px solid #a0522d;
+            border-radius: 8px;
+        }
+
+        .reflection-point h3 {
+            color: #8b4513;
+            margin-bottom: 15px;
+        }
+
+        .reflection-arabic {
+            font-family: 'Amiri', serif;
+            font-size: 1.3rem;
+            line-height: 2.2;
+            text-align: right;
+            direction: rtl;
+            color: #2c3e50;
+            padding: 15px;
+            background: #f8fdf9;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .reflection-english {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-text {
+            color: #666;
+            font-style: italic;
+            margin: 10px 0;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .navigation {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        let currentVerse = 77;
+        
+        function playVerse(verseNumber) {
+            currentVerse = verseNumber;
+            const audio = document.getElementById('quranAudio');
+            const source = document.getElementById('audioSource');
+            
+            // Format verse number to 3 digits (e.g., 077)
+            const formattedVerse = String(verseNumber).padStart(3, '0');
+            
+            // Update audio source
+            source.src = `https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002${formattedVerse}.mp3`;
+            
+            // Load and play
+            audio.load();
+            audio.play();
+            
+            // Update button styles
+            document.querySelectorAll('.verse-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+        
+        // Auto-play next verse when current one ends
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('quranAudio');
+            
+            audio.addEventListener('ended', function() {
+                if (currentVerse < 83) {
+                    const nextBtn = document.querySelector(`[onclick="playVerse(${currentVerse + 1})"]`);
+                    if (nextBtn) {
+                        nextBtn.click();
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <a href="#" class="nav-link">← Previous Page</a>
+            <a href="#" class="nav-link">Next Page →</a>
+        </div>
+
+        <div class="header">
+            <div class="arabic-title">سورة البقرة</div>
+            <h1>Surah Al-Baqarah (The Cow)</h1>
+            <div class="page-info">Page 12 | Verses 77-83</div>
+        </div>
+
+        <div class="audio-player-section">
+            <h3>🎧 استماع للآيات | Listen to the Verses</h3>
+            <p>القارئ: عبد الباسط عبد الصمد | Reciter: Abdul Basit Abdus Samad</p>
+            
+            <div class="audio-controls">
+                <audio id="quranAudio" controls>
+                    <source id="audioSource" src="https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002077.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                
+                <div class="verse-selector">
+                    <button class="verse-btn active" onclick="playVerse(77)">Verse 77</button>
+                    <button class="verse-btn" onclick="playVerse(78)">Verse 78</button>
+                    <button class="verse-btn" onclick="playVerse(79)">Verse 79</button>
+                    <button class="verse-btn" onclick="playVerse(80)">Verse 80</button>
+                    <button class="verse-btn" onclick="playVerse(81)">Verse 81</button>
+                    <button class="verse-btn" onclick="playVerse(82)">Verse 82</button>
+                    <button class="verse-btn" onclick="playVerse(83)">Verse 83</button>
+                </div>
+                
+                <div class="reciter-info">
+                    بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                </div>
+            </div>
+        </div>
+
+        <div class="verses-container">
+            <div class="verse">
+                <span class="verse-number">Verse 77</span>
+                <div class="arabic-text">
+                    أَوَلَا يَعْلَمُونَ أَنَّ ٱللَّهَ يَعْلَمُ مَا يُسِرُّونَ وَمَا يُعْلِنُونَ
+                </div>
+                <div class="english-text">
+                    But do they not know that Allah knows what they conceal and what they declare?
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 78</span>
+                <div class="arabic-text">
+                    وَمِنْهُمْ أُمِّيُّونَ لَا يَعْلَمُونَ ٱلْكِتَٰبَ إِلَّآ أَمَانِىَّ وَإِنْ هُمْ إِلَّا يَظُنُّونَ
+                </div>
+                <div class="english-text">
+                    And among them are unlettered ones who do not know the Scripture except in wishful thinking, but they are only assuming.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 79</span>
+                <div class="arabic-text">
+                    فَوَيْلٌۭ لِّلَّذِينَ يَكْتُبُونَ ٱلْكِتَٰبَ بِأَيْدِيهِمْ ثُمَّ يَقُولُونَ هَٰذَا مِنْ عِندِ ٱللَّهِ لِيَشْتَرُوا۟ بِهِۦ ثَمَنًۭا قَلِيلًۭا ۖ فَوَيْلٌۭ لَّهُم مِّمَّا كَتَبَتْ أَيْدِيهِمْ وَوَيْلٌۭ لَّهُم مِّمَّا يَكْسِبُونَ
+                </div>
+                <div class="english-text">
+                    So woe to those who write the "scripture" with their own hands, then say, "This is from Allah," in order to exchange it for a small price. Woe to them for what their hands have written and woe to them for what they earn.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 80</span>
+                <div class="arabic-text">
+                    وَقَالُوا۟ لَن تَمَسَّنَا ٱلنَّارُ إِلَّآ أَيَّامًۭا مَّعْدُودَةًۭ ۚ قُلْ أَتَّخَذْتُمْ عِندَ ٱللَّهِ عَهْدًۭا فَلَن يُخْلِفَ ٱللَّهُ عَهْدَهُۥٓ ۖ أَمْ تَقُولُونَ عَلَى ٱللَّهِ مَا لَا تَعْلَمُونَ
+                </div>
+                <div class="english-text">
+                    And they say, "Never will the Fire touch us, except for a few days." Say, "Have you taken a covenant with Allah? For Allah will never break His covenant. Or do you say about Allah that which you do not know?"
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 81</span>
+                <div class="arabic-text">
+                    بَلَىٰ مَن كَسَبَ سَيِّئَةًۭ وَأَحَٰطَتْ بِهِۦ خَطِيٓـَٔتُهُۥ فَأُو۟لَٰٓئِكَ أَصْحَٰبُ ٱلنَّارِ ۖ هُمْ فِيهَا خَٰلِدُونَ
+                </div>
+                <div class="english-text">
+                    Yes, whoever earns evil and his sin has encompassed him - those are the companions of the Fire; they will abide therein eternally.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 82</span>
+                <div class="arabic-text">
+                    وَٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ أُو۟لَٰٓئِكَ أَصْحَٰبُ ٱلْجَنَّةِ ۖ هُمْ فِيهَا خَٰلِدُونَ
+                </div>
+                <div class="english-text">
+                    But they who believe and do righteous deeds - those are the companions of Paradise; they will abide therein eternally.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 83</span>
+                <div class="arabic-text">
+                    وَإِذْ أَخَذْنَا مِيثَٰقَ بَنِىٓ إِسْرَٰٓءِيلَ لَا تَعْبُدُونَ إِلَّا ٱللَّهَ وَبِٱلْوَٰلِدَيْنِ إِحْسَٰنًۭا وَذِى ٱلْقُرْبَىٰ وَٱلْيَتَٰمَىٰ وَٱلْمَسَٰكِينِ وَقُولُوا۟ لِلنَّاسِ حُسْنًۭا وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ ثُمَّ تَوَلَّيْتُمْ إِلَّا قَلِيلًۭا مِّنكُمْ وَأَنتُم مُّعْرِضُونَ
+                </div>
+                <div class="english-text">
+                    And [recall] when We took the covenant from the Children of Israel, [enjoining upon them], "Do not worship except Allah; and to parents do good and to relatives, orphans, and the needy. And speak to people good [words] and establish prayer and give zakah." Then you turned away, except a few of you, and you were refusing.
+                </div>
+            </div>
+        </div>
+
+        <div class="reflection-section">
+            <h2>💭 تأملات يومية | Daily Reflections</h2>
+            
+            <div class="reflection-point">
+                <h3>👁️ علم الله المطلق | Allah's Absolute Knowledge</h3>
+                <div class="reflection-arabic">
+                    الله يعلم ما نسرّه وما نعلنه. لا يخفى عليه شيء في الأرض ولا في السماء. هذا العلم المطلق يجب أن يجعلنا نراقب أفكارنا وأفعالنا في السر والعلن. المراقبة الذاتية تنبع من إيماننا بأن الله مطّلع على كل شيء.
+                </div>
+                <div class="reflection-english">
+                    Allah knows what we conceal and what we declare. Nothing is hidden from Him on earth or in the heavens. This absolute knowledge should make us monitor our thoughts and actions in private and public. Self-accountability stems from our belief that Allah is aware of everything.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>📚 الجهل بالكتاب | Ignorance of Scripture</h3>
+                <div class="reflection-arabic">
+                    بعضهم لا يعرفون الكتاب إلا أماني وظنون. الإيمان الحقيقي يتطلب المعرفة والفهم، وليس مجرد التمني والتخمين. يجب علينا أن نتعلم ديننا بعمق ونفهم كتاب الله بصدق، لا أن نتبع الأهواء والظنون.
+                </div>
+                <div class="reflection-english">
+                    Some know the Scripture only through wishful thinking and assumptions. True faith requires knowledge and understanding, not mere wishes and guesses. We must learn our religion deeply and understand Allah's book sincerely, not follow desires and assumptions.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>✍️ تحريف الكتاب للمكاسب الدنيوية | Distorting Scripture for Worldly Gain</h3>
+                <div class="reflection-arabic">
+                    الويل لمن يكتبون الكتاب بأيديهم ثم ينسبونه لله من أجل ثمن قليل! هذا تحذير شديد لكل من يحرّف دين الله أو يتاجر به. الدين ليس للبيع، والحقيقة لا تُشترى بالمال. علماء السوء الذين يفتون بالباطل من أجل المال هم أخطر على الأمة.
+                </div>
+                <div class="reflection-english">
+                    Woe to those who write scripture with their own hands then attribute it to Allah for a small price! This is a severe warning to anyone who distorts Allah's religion or trades with it. Religion is not for sale, and truth cannot be bought with money. Evil scholars who give false rulings for money are the most dangerous to the Ummah.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>🔥 الأماني الكاذبة عن النار | False Hopes about Hellfire</h3>
+                <div class="reflection-arabic">
+                    قالوا لن تمسّنا النار إلا أياماً معدودة - أماني كاذبة! لا أحد يملك عهداً خاصاً مع الله يحميه من عذاب الآخرة إلا بالإيمان والعمل الصالح. الغرور الديني خطير - لا نجاة إلا بالإيمان الحق والعمل الصالح، بغض النظر عن انتمائنا.
+                </div>
+                <div class="reflection-english">
+                    They said the Fire will not touch us except for a few days - false hopes! No one has a special covenant with Allah that protects them from punishment except through faith and righteous deeds. Religious arrogance is dangerous - there is no salvation except through true faith and good works, regardless of our affiliation.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>⚖️ الجنة والنار: المصيران الأبديان | Paradise and Hell: The Two Eternal Destinations</h3>
+                <div class="reflection-arabic">
+                    الآيتان ٨١ و٨٢ تضعان الخيارين بوضوح: من كسب السيئات وأحاطت به خطيئته فهو من أهل النار، ومن آمن وعمل صالحاً فهو من أهل الجنة - خالدين أبداً. لا مكان ثالث، لا وسط. الاختيار واضح، والنتيجة أبدية. اللهم اجعلنا من أهل الجنة!
+                </div>
+                <div class="reflection-english">
+                    Verses 81 and 82 clearly present the two choices: whoever earns evil and is encompassed by sin is among the people of the Fire, and whoever believes and does righteous deeds is among the people of Paradise - abiding eternally. There is no third place, no middle ground. The choice is clear, and the result is eternal. O Allah, make us among the people of Paradise!
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>🤝 الميثاق الإلهي والأخلاق الاجتماعية | Divine Covenant and Social Ethics</h3>
+                <div class="reflection-arabic">
+                    الآية ٨٣ تجمع بين التوحيد والأخلاق: عبادة الله وحده، والإحسان للوالدين والأقارب واليتامى والمساكين، والقول الحسن للناس، وإقامة الصلاة وإيتاء الزكاة. الدين الحق يجمع بين العبادة والأخلاق الاجتماعية. لا فصل بين الإيمان والإحسان. هذا هو الإسلام الشامل.
+                </div>
+                <div class="reflection-english">
+                    Verse 83 combines monotheism with ethics: worshiping Allah alone, being good to parents, relatives, orphans and the needy, speaking good words to people, establishing prayer and giving zakah. True religion combines worship with social ethics. There is no separation between faith and excellence in conduct. This is comprehensive Islam.
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-text">
+                "وَٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ أُو۟لَٰٓئِكَ أَصْحَٰبُ ٱلْجَنَّةِ"
+            </div>
+            <div class="footer-text">
+                "Those who believe and do righteous deeds - those are the companions of Paradise"
+            </div>
+            <div class="footer-text">
+                May this daily reflection bring us closer to Allah and increase our understanding of His words
+            </div>
+            <div class="footer-text">
+                🤲 آمين يا رب العالمين | Ameen Ya Rabb Al-Alameen 🤲
+            </div>
+        </div>
+    </div>
+</body>
+</html>
